@@ -1,0 +1,39 @@
+<section id="experiences" class="experience-section">
+  <div class="section-container">
+    <h2 class="section-title">Work Experiences</h2>
+
+    {{#each experiences}}
+    <div class="experience-card">
+
+      <div class="experience-left">
+        <img src="{{image}}" alt="{{title}}">
+      </div>
+
+      <div class="experience-right">
+        <div class="experience-header">
+          <div>
+            <h3>{{title}}</h3>
+            <p class="experience-company">{{headline}}</p>
+          </div>
+          <span class="experience-date">{{date}}</span>
+        </div>
+
+        <ul class="experience-list">
+          {{#each list}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+
+        <div class="experience-tech">
+          {{#each this.techStack}}
+          <span class="tech-badge">{{this}}</span>
+          {{/each}}
+        </div>
+
+      </div>
+
+    </div>
+    {{/each}}
+
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section id="techstack">
+  <div class="techstack-container">
+
+    <!-- Section Title -->
+    <div class="techstack-header">
+      <h2>Tech Stack – Tools I Use Everyday</h2>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper techstackSwiper">
+      <div class="swiper-wrapper">
+
+        {{#each techStack}}
+          <div class="swiper-slide">
+            <div class="tech-card">
+              <img src="{{this.image}}" alt="{{this.title}}">
+              <p>{{this.title}}</p>
+            </div>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+
+  </div>
+</section>
