@@ -10,15 +10,21 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const rootPath = process.cwd();
+const viewsPath = path.join(rootPath, "views");
+const partialsPath = path.join(rootPath, "views/partials");
+const publicPath = path.join(rootPath, "public");
+
 // Static folder
-app.use(express.static(path.join(process.cwd(), "public")));
+app.use(express.static(publicPath));
 
 // View engine
 app.set("view engine", "hbs");
-app.set("views", path.join(process.cwd(), "views"));
-app.set("view options", { layout: "layouts/main" });
+app.set("views", viewsPath);
 
-hbs.registerPartials(path.join(process.cwd(), "views/partials"));
+hbs.registerPartials(partialsPath);
+
+app.set("view options", { layout: "layouts/main" });
 
 // Route
 app.get("/", (req, res) => {
