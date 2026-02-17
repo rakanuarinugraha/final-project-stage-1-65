@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, "views")));
 
 // View engine
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "public"));
 
 hbs.registerPartials(path.join(__dirname, "views/partials"));
 
